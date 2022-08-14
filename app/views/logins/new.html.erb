@@ -1,0 +1,26 @@
+<div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
+  <div class="max-w-lg mx-auto text-center">
+    <h1 class="text-2xl font-bold sm:text-3xl">Get started today!</h1>
+  </div>
+  <%= form_with model: @user, url: logins_path, class: "max-w-md mx-auto mt-8 mb-0 space-y-4" do |form| %>
+    <div>
+      <%= form.label :email, class: "sr-only"  %>
+      <div class="relative">
+        <%= form.email_field :email, placeholder: "Email", class: "w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"  %>
+      </div>
+    </div>
+    <div>
+      <%= form.label :password, class: "sr-only"  %>
+      <div class="relative">
+        <%= form.password_field :password, placeholder: "Password",class: "w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm" %>
+      </div>
+    </div>
+    <div class="flex items-center justify-between">
+      <p class="text-sm text-gray-500">
+        No account?
+        <%= link_to "Sign up", new_registration_path, class: "underline"%>
+      </p>
+      <%= form.submit "Sign in",class:"inline-block px-5 py-3 ml-3 text-sm font-medium text-white bg-blue-500 rounded-lg"%>
+    </div>
+  <% end %>
+</div>

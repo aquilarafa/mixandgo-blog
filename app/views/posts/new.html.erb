@@ -1,0 +1,20 @@
+<div class="max-w-3xl p-8 mx-auto  overflow-hidden ">
+  <div class="max-w-lg mx-auto text-center">
+    <h1 class="text-2xl font-bold sm:text-3xl">New Post</h1>
+  </div>
+  <div class="p-8 lg:p-12 lg:col-span-3">
+    <%= form_with model: @post, url: posts_path, class: "space-y-4" do |form| %>
+      <div>
+        <%= form.label :title, class: "sr-only" %>
+        <%= form.text_field :title, placeholder: "Title", class: "w-full p-3 text-sm border-gray-200 rounded-lg" %>
+      </div>
+      <div>
+        <%= form.label :body, class: "sr-only" %>
+        <%= form.text_area :body, placeholder: "Content", rows: 8, class: "w-full p-3 text-sm border-gray-200 rounded-lg" %>
+      </div>
+      <div class="mt-4">
+        <%= form.submit "Save Post", class: "inline-flex items-center justify-center w-full px-5 py-3 text-white bg-black rounded-lg sm:w-auto" %>
+      </div>
+    <% end %>
+  </div>
+</div>
